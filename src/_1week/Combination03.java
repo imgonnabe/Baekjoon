@@ -5,16 +5,13 @@ public class Combination03 {
 		int[] arr = { 1, 2, 3 };// 조합을 만들 배열
 		boolean[] visited = new boolean[arr.length];// 조합에 뽑혔는지를 확인하기 위한 배열
 
-		for (int r = 1; r <= arr.length; r++) {
-			System.out.println(arr.length + "개중에 " + r + "개 뽑음");
-			comb2(arr, visited, 0, r);
-		}
+		comb2(arr, visited, 0, 1);// 1개 고르기
 	}
 
 	static void comb2(int[] arr, boolean[] visited, int depth, int r) {// depth는 현재 인덱스
 		if (r == 0) {
 			print1(arr, visited);
-			return;
+			return;// 빠져나옴
 		}
 		
 		if (depth == arr.length) {
